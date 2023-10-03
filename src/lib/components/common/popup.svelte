@@ -1,9 +1,14 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import Backdrop from './backdrop.svelte';
+
+	export let open = false;
 </script>
 
-<Backdrop>
-	<div class="fixed -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border border-black rounded p-6 bg-white">
-		<slot />
-	</div>
-</Backdrop>
+{#if open}
+	<Backdrop>
+		<div transition:fly={{ y: 100 }} class="border-2 border-black rounded p-6 bg-white">
+			<slot />
+		</div>
+	</Backdrop>
+{/if}

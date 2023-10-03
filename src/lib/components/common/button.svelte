@@ -2,8 +2,8 @@
 	export let type: 'button' | 'submit' | 'reset' = 'button';
 </script>
 
-<button {type} on:click class="btn p-0 relative outline-none border-0 mt-2">
-	<div class=" min-w-[150px] px-4 py-2 bg-white border border-black rounded"><slot /></div>
+<button {type} on:click class="btn p-0 relative mt-2">
+	<div class=" min-w-[150px] px-4 py-2 bg-white border-2 border-black border-sketch"><slot /></div>
 </button>
 
 <style class="postcss">
@@ -45,6 +45,11 @@
 		transform: translateY(var(--hover-after));
 		transition: all 0.1s;
 
-		@apply border-black border rounded bg-white;
+		border-top-left-radius: 100px 15px;
+		border-top-right-radius: 15px 225px;
+		border-bottom-right-radius: 225px 15px;
+		border-bottom-left-radius: 15px 255px;
+
+		@apply border-black border-2 bg-white;
 	}
 </style>

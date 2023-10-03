@@ -9,7 +9,8 @@ export default {
 		},
 		colors: {
 			black: '#292929',
-			white: '#fff'
+			white: '#fff',
+			link: '#309ff0'
 		}
 	},
 	plugins: []

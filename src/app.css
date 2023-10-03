@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&family=Itim:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
-	--font-bold: 600;
+	--font-bold: 500;
 	--font-normal: 400;
 	--font-light: 300;
-
 	--line-height: 1.8;
-}
 
-body {
-	font-family: 'Mali', monospace;
+	font-family: 'Itim', monospace;
 	font-size: 16px;
 	font-weight: var(--font-normal);
 	line-height: var(--line-height);
+
+	color: #292929;
 	text-align: center;
 
 	font-synthesis: none;
@@ -26,8 +25,19 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+body {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	overflow: hidden;
+
+	width: 100vw;
+	height: 100vh;
+	padding: 1rem 2rem;
+	gap: 1rem;
+}
+
 h1 {
-	font-family: 'Mali', monospace;
 	font-size: 2rem;
 	line-height: 1.5;
 	font-weight: var(--font-bold);
@@ -63,16 +73,6 @@ h6 {
 	font-weight: var(--font-normal);
 }
 
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
-	margin-top: 1.5rem;
-	margin-bottom: 1rem;
-}
-
 p {
 	font-size: 1rem;
 	font-weight: var(--font-normal);
@@ -85,26 +85,10 @@ button {
 	line-height: var(--line-height);
 }
 
-figcaption {
-	font-size: 0.875rem;
-	font-weight: var(--font-bold);
-	line-height: var(--line-height);
-}
-
 caption {
 	font-size: 0.875rem;
 	font-weight: var(--font-normal);
 	line-height: var(--line-height);
-}
-
-ol {
-	list-style-type: decimal;
-	padding-left: 2rem;
-}
-
-ul {
-	list-style: disc;
-	padding-left: 2rem;
 }
 
 .text-body-1 {
@@ -147,4 +131,11 @@ ul {
 	font-size: 0.875rem;
 	font-weight: var(--font-normal);
 	line-height: var(--line-height);
+}
+
+.border-sketch {
+	border-top-left-radius: 225px 15px;
+	border-top-right-radius: 15px 225px;
+	border-bottom-right-radius: 225px 15px;
+	border-bottom-left-radius: 15px 255px;
 }
