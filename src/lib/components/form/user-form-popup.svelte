@@ -30,7 +30,7 @@
 		use:enhance={handleSumbit}
 		method="post"
 		action="/?/save"
-		class=" flex flex-col items-center gap-6 w-[250px] bg-white"
+		class=" flex flex-col items-center gap-4 w-[250px] bg-white"
 	>
 		<section class=" flex gap-4">
 			<button type="button" on:click={prevProfileHandle} class=" select-none text-button">{'<'}</button>
@@ -48,7 +48,7 @@
 			bind:value={name}
 			name="name"
 			type="text"
-			class=" outline-none border-2 border-black border-sketch px-4 py-2 text-subtitle-1 text-black text-center"
+			class=" outline-none border-2 border-black border-sketch px-4 py-2 text-input text-black text-center"
 			placeholder="ใส่ชื่อ"
 			required
 		/>

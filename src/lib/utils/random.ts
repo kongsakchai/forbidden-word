@@ -1,3 +1,11 @@
+import word from '$lib/data/word.json';
+
+export const randomWord = () => {
+	const index = randomNumber(word.length - 1);
+
+	return word[index] as string;
+};
+
 export const randomString = (length = 5) => {
 	let str = '';
 	let rand = 0;

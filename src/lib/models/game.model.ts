@@ -1,3 +1,4 @@
+import { randomWord } from '$lib/utils/random';
 import type { IPlayer } from './player.model';
 
 export interface IGame {
@@ -32,7 +33,13 @@ export class Game implements IGame {
 	}
 
 	public join(player: IPlayer): void {
-		this.players.push({ ...player, status: PlayerStatusEnum.ALIVE });
+		if (!this.hasPlayer(player)) {
+			this.players.push({ ...player, status: PlayerStatusEnum.ALIVE });
+		}
+	}
+
+	public hasPlayer(player: IPlayer): boolean {
+		return this.players.some((pl) => pl.id === player.id);
 	}
 
 	public isWait(): boolean {
@@ -45,5 +52,20 @@ export class Game implements IGame {
 
 	public toData(): IGame {
 		return this;
+	}
+
+	public start(): void {
+		const temp: string[] = [];
+		let word = '';
+
+		this.players.forEach((pl) => {
+			do {
+				word = randomWord();
+			} while (temp.includes(word));
+
+			pl.word = word;
+		});
+
+		this.status = GameStatusEnum.START;
 	}
 }

@@ -1,6 +1,5 @@
 import { Game } from '$lib/models/game.model';
 import type { IPlayer } from '$lib/models/player.model';
-import { hasInGame } from '$lib/utils/hasInGame';
 import { randomNumber } from '$lib/utils/random';
 
 const games = new Map<string, Game>();
@@ -22,13 +21,29 @@ export const JoinGame = (id: string, player: IPlayer) => {
 
 	if (!game) return null;
 
-	const inGame = hasInGame(game, player);
+	const hasPlayer = game.hasPlayer(player);
 
-	if (game.isWait()) {
-		if (!inGame) game.join(player);
-	} else if (game.isEnd() || !inGame) {
-		return null;
+	if (game.isWait() || hasPlayer) {
+		if (!hasPlayer) game.join(player);
+
+		return game;
 	}
 
-	return game.toData();
+	return null;
+};
+
+export const LoadGame = (id: string, player: IPlayer) => {
+	const game = games.get(id);
+
+	if (!game) return null;
+
+	if (game.hasPlayer(player)) return game.toData();
+
+	return null;
+};
+
+export const StartGame = (id: string) => {
+	const game = games.get(id);
+
+	if (!game) return null;
 };

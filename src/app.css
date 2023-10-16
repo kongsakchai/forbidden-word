@@ -7,13 +7,12 @@
 :root {
 	--font-bold: 500;
 	--font-normal: 400;
-	--font-light: 300;
-	--line-height: 1.8;
+	--line-height: 1;
 
 	font-family: 'Itim', monospace;
 	font-size: 16px;
-	font-weight: var(--font-normal);
-	line-height: var(--line-height);
+	font-weight: 400;
+	line-height: 1;
 
 	color: #292929;
 	text-align: center;
@@ -61,76 +60,23 @@ h4 {
 	font-weight: var(--font-bold);
 }
 
-h5 {
-	font-size: 1rem;
-	line-height: 1;
-	font-weight: var(--font-bold);
-}
-
-h6 {
-	font-size: 1rem;
-	line-height: 1;
-	font-weight: var(--font-normal);
-}
-
-p {
-	font-size: 1rem;
-	font-weight: var(--font-normal);
-	line-height: var(--line-height);
-}
 
 button {
 	font-size: 0.875rem;
 	font-weight: var(--font-bold);
-	line-height: var(--line-height);
+	line-height: 1;
 }
 
-caption {
+.text-input {
 	font-size: 0.875rem;
 	font-weight: var(--font-normal);
-	line-height: var(--line-height);
-}
-
-.text-body-1 {
-	font-size: 1rem;
-	font-weight: var(--font-normal);
-	line-height: var(--line-height);
-}
-
-.text-body-2 {
-	font-size: 1rem;
-	font-weight: var(--font-light);
-	line-height: var(--line-height);
-}
-
-.text-body-3 {
-	font-size: 1rem;
-	font-weight: var(--font-bold);
-	line-height: var(--line-height);
-}
-
-.text-subtitle-1 {
-	font-size: 0.875rem;
-	font-weight: var(--font-normal);
-	line-height: var(--line-height);
-}
-
-.text-subtitle-2 {
-	font-size: 0.875rem;
-	font-weight: var(--font-light);
-	line-height: var(--line-height);
+	line-height: 1;
 }
 
 .text-button {
 	font-size: 0.875rem;
 	font-weight: var(--font-bold);
-	line-height: var(--line-height);
-}
-
-.text-caption {
-	font-size: 0.875rem;
-	font-weight: var(--font-normal);
-	line-height: var(--line-height);
+	line-height: 1;
 }
 
 .border-sketch {
