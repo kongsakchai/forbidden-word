@@ -6,6 +6,7 @@
 	import { UserFormPopup } from '$lib/components/form';
 	import JoinFormPopup from '$lib/components/form/join-form-popup.svelte';
 	import PageTransition from '$lib/components/layout/page-transition.svelte';
+	import { onDestroy } from 'svelte';
 	import type { ActionData, PageData } from './$types';
 
 	export let data: PageData;

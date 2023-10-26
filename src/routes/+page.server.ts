@@ -1,5 +1,5 @@
 import type { IPlayer } from '$lib/models/player.model.js';
-import { CreateGame, JoinGame } from '$lib/services/game.js';
+import { CreateGame, JoinGame, StartGame } from '$lib/services/game.js';
 import { SavePlayer } from '$lib/services/player.js';
 import { randomString } from '$lib/utils/random.js';
 import { redirect } from '@sveltejs/kit';
@@ -26,8 +26,11 @@ export const actions = {
 		return { success: true };
 	},
 	create: async ({ locals }) => {
-		const id = CreateGame();
 		const player = locals.player;
+
+		if (!player) return { success: false };
+
+		const id = CreateGame(player);
 
 		return gotoGame(id, player);
 	},
@@ -38,8 +41,12 @@ export const actions = {
 
 		return gotoGame(id, player);
 	},
-	start: async ({ request, locals }) => {
-		//
+	start: async ({ request }) => {
+		const formData = await request.formData();
+		const id = formData.get('id') as string;
+		StartGame(id);
+
+		return { success: true };
 	}
 };
 

@@ -3,6 +3,7 @@ import type { IPlayer } from './player.model';
 
 export interface IGame {
 	id: string;
+	createBy: string | null;
 	status: GameStatusEnum;
 	players: IPlayerInGame[];
 }
@@ -26,10 +27,12 @@ export enum PlayerStatusEnum {
 export class Game implements IGame {
 	status: GameStatusEnum;
 	players: IPlayerInGame[];
+	createBy: string | null;
 
-	constructor(readonly id: string) {
+	constructor(readonly id: string, createBy: string | null) {
 		this.status = GameStatusEnum.WAIT;
 		this.players = [];
+		this.createBy = createBy;
 	}
 
 	public join(player: IPlayer): void {

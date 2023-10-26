@@ -10,6 +10,6 @@
 	</div>
 	<p class="select-none">{name}</p>
 	{#if word}
-		<h4 class=" text-red">{`< ${word} >`}</h4>
+		<h4 class=" text-red mt-2">{`< ${word} >`}</h4>
 	{/if}
 </div>
